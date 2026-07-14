@@ -55,7 +55,7 @@ namespace UGameCore.Utilities
 
 	    public Vector2 GetMovementNonNormalized()
 	    {
-	    	if (!m_isPointerDown || !this.IsPointerInside)
+	    	if (!m_isPointerDown)
 	    		return Vector2.zero;
 	    	Vector2 pointerPos = this.LastPointerPos;
 	    	Vector2 localPoint = Vector2.zero;
