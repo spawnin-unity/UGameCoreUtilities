@@ -14,7 +14,12 @@ namespace UGameCore.Utilities
         {
             base.Start();
 
+#if !UNITY_SERVER
+            // Dedicated Server remove o IMGUI (Dedicated Server Optimizations) e
+            // GUIUtility.hotControl vira SIGSEGV nativo. Sem UI no servidor, nao ha
+            // IMGUI para arbitrar com o EventSystem.
             StartCoroutine(this.Coroutine());
+#endif
         }
 
         IEnumerator Coroutine()
